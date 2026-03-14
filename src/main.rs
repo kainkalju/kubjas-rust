@@ -56,6 +56,10 @@ struct Cli {
     #[arg(long, default_value = "/etc/kubjas.conf")]
     conf_file: String,
 
+    /// Directory for additional configuration files
+    #[arg(long, default_value = "/etc/kubjas.d")]
+    config_dir: String,
+
     /// Log file path (appended)
     #[arg(long)]
     log_file: Option<String>,
@@ -272,7 +276,7 @@ fn main() {
 
     let my_host = whoami();
     let start_unix = unix_now();
-    let config_dir = "/etc/kubjas.d";
+    let config_dir = cli.config_dir.as_str();
 
     println!(
         "{}  Starting [kubjas] PID {} at host \"{}\"",

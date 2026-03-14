@@ -7,7 +7,7 @@ kubjas — (cron-like) daemon to execute scheduled commands
 ## SYNOPSIS
 
 ```
-kubjas [--background] [--conf-file /etc/kubjas.conf] [--log-file /path/kubjas.log] [--pid-file /path/kubjas.pid]
+kubjas [--background] [--conf-file /etc/kubjas.conf] [--config-dir /etc/kubjas.d] [--log-file /path/kubjas.log] [--pid-file /path/kubjas.pid]
 ```
 
 ## DESCRIPTION
@@ -333,8 +333,8 @@ kill -USR2 $(cat /var/run/kubjas.pid)
 ## FILES
 
 ```
-/etc/kubjas.conf
-/etc/kubjas.d/
+/etc/kubjas.conf        main configuration file      (override: --conf-file)
+/etc/kubjas.d/          additional configuration dir  (override: --config-dir)
 ```
 
 ## SEE ALSO
