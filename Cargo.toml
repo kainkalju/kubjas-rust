@@ -1,0 +1,23 @@
+[package]
+name = "kubjas"
+version = "0.1.0"
+edition = "2021"
+description = "Cron-like daemon to execute scheduled commands"
+authors = ["Kain Kalju <kain@flycom.ee>"]
+license = "MIT"
+
+[[bin]]
+name = "kubjas"
+path = "src/main.rs"
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+configparser = "3"
+nix = { version = "0.29", features = ["process", "signal", "user", "fs", "hostname"] }
+notify = "8"
+crc32fast = "1"
+rand = "0.8"
+chrono = "0.4"
+log = "0.4"
+env_logger = "0.11"
+libc = "0.2"
